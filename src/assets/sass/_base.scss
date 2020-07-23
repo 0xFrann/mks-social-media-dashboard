@@ -1,0 +1,56 @@
+@use 'mixins/font' as font-mixin;
+
+//  Font Variables
+
+$base-font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$static-font-face: "Inter Static";
+$variable-font-face: "Inter Variable";
+
+$static-font-stack: $static-font-face, $base-font-stack;
+$variable-font-stack: $variable-font-face, $base-font-stack;
+
+$base-font-size: 16px;
+
+//  Font-face
+
+%font-family-support {
+  font-family: $static-font-stack;
+
+  @supports (font-variation-settings: normal) {
+    font-family: $variable-font-stack;
+  }
+}
+
+@include font-mixin.font-face(
+  $variable-font-face,
+  "../../fonts/Inter/Inter-VariableFont_slnt,wght",
+  1 900,
+  normal,
+  ttf
+);
+
+@include font-mixin.font-face(
+  $static-font-face,
+  "../../fonts/Inter/static/Inter-Regular-slnt=0",
+  400,
+  normal,
+  ttf
+);
+
+@include font-mixin.font-face(
+  $static-font-face,
+  "../../fonts/Inter/static/Inter-Bold-slnt=0",
+  700,
+  normal,
+  ttf
+);
+
+// Base Font-family and colors
+
+*,
+html,
+body {
+  @extend %font-family-support;
+}
