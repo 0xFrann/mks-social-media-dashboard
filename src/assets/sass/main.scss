@@ -1,8 +1,7 @@
-//  Normalize
-
-@import "~normalize-scss/sass/normalize";
-@include normalize();
-
 //  Base styles
 
-@import "base.scss";
+@import "base/index";
+
+//  Normalize
+
+@import "~normalize-scss/sass/normalize/import-now";

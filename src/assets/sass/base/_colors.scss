@@ -1,0 +1,30 @@
+@use "sass:map";
+
+//  Colors Maps
+
+$colors-base: (
+  "lime-green": hsl(163, 72%, 41%),
+  "bright-red": hsl(356, 69%, 56%),
+  "desaturated-purple": hsl(240, 17%, 2%),
+);
+
+$colors-light: (
+  "background": hsl(0, 0%, 100%),
+  "background-variation": hsl(225, 100%, 98%),
+  "element": hsl(227, 47%, 96%),
+  "text": hsl(230, 17%, 14%),
+  "text-variation": hsl(228, 12%, 44%),
+);
+
+$colors-dark: (
+  "background": hsl(230, 17%, 14%),
+  "background-variation": hsl(232, 19%, 15%),
+  "element": hsl(228, 28%, 20%),
+  "text": hsl(0, 0%, 100%),
+  "text-variation": hsl(228, 34%, 66%),
+);
+
+//  Themes
+
+$theme-light: map.merge($colors-base, $colors-light);
+$theme-dark: map.merge($colors-base, $colors-dark);

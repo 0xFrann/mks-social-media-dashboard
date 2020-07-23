@@ -1,0 +1,31 @@
+// Sass Native
+@use "sass:map";
+
+// @use
+@use "colors" as *;
+@use "fonts" as *;
+
+/** 
+ *  Base Styles
+*/
+
+*,
+html,
+body {
+  @extend %font-family-support;
+}
+
+:root {
+  --color: #{map.get($theme-light, "text")};
+  --background: #{map.get($theme-light, "background")};
+}
+
+.dark-theme {
+  --color: #{map.get($theme-dark, "text")};
+  --background: #{map.get($theme-dark, "background")};
+}
+
+body {
+  color: var(--color);
+  background: var(--background);
+}
