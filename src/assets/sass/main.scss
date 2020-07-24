@@ -1,7 +1,15 @@
-//  Base styles
+//  Configuration
+
+@import "config/index";
+
+//  Mixins
+
+@import "mixins/index";
+
+//  Base
 
 @import "base/index";
 
-//  Normalize
+//  Utils
 
-@import "~normalize-scss/sass/normalize/import-now";
+@import "utils/index";

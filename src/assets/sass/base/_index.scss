@@ -1,31 +1,26 @@
-// Sass Native
-@use "sass:map";
+//  Import reboot
+@import "reboot";
 
-// @use
-@use "colors" as *;
-@use "fonts" as *;
+@include font-face(
+  $variable-font-face,
+  "../../fonts/Inter/Inter-VariableFont_slnt,wght",
+  1 900,
+  normal,
+  ttf
+);
 
-/** 
- *  Base Styles
-*/
+@include font-face(
+  $static-font-face,
+  "../../fonts/Inter/static/Inter-Regular-slnt=0",
+  400,
+  normal,
+  ttf
+);
 
-*,
-html,
-body {
-  @extend %font-family-support;
-}
-
-:root {
-  --color: #{map.get($theme-light, "text")};
-  --background: #{map.get($theme-light, "background")};
-}
-
-.dark-theme {
-  --color: #{map.get($theme-dark, "text")};
-  --background: #{map.get($theme-dark, "background")};
-}
-
-body {
-  color: var(--color);
-  background: var(--background);
-}
+@include font-face(
+  $static-font-face,
+  "../../fonts/Inter/static/Inter-Bold-slnt=0",
+  700,
+  normal,
+  ttf
+);

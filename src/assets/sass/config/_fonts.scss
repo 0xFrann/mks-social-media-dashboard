@@ -1,0 +1,34 @@
+//  Fonts Variables
+
+$base-font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+  monospace !default;
+
+$static-font-face: "Inter Static";
+$variable-font-face: "Inter Variable";
+
+$static-font-stack: $static-font-face, $base-font-stack;
+$variable-font-stack: $variable-font-face, $base-font-stack;
+
+$base-font-size: 16px !default;
+$font-weight-base: 400 !default;
+$dt-font-weight: 700 !default;
+$font-weight-bolder: 700 !default;
+$line-height-base: 1.5 !default;
+$headings-margin-bottom: 0.5rem !default;
+$paragraph-margin-bottom: 1rem !default;
+$link-color: hsl(230, 47%, 41%) !default;
+$link-decoration: none !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+$label-margin-bottom: 0.5rem !default;
+//  Font-face
+
+%font-family-support {
+  font-family: $static-font-stack;
+
+  @supports (font-variation-settings: normal) {
+    font-family: $variable-font-stack;
+  }
+}
