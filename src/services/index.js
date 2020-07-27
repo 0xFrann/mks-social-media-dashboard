@@ -6,6 +6,7 @@ export const totalFollowers = () => {
 export const getGlobalStats = () => [
   {
     socialMedia: {
+      title: "Facebook followers",
       icon: "facebook",
       link: { text: "@nathanf", url: "#" },
     },
@@ -20,6 +21,7 @@ export const getGlobalStats = () => [
   },
   {
     socialMedia: {
+      title: "Twitter followers",
       icon: "twitter",
       link: { text: "@nathanf", url: "#" },
     },
@@ -34,6 +36,7 @@ export const getGlobalStats = () => [
   },
   {
     socialMedia: {
+      title: "Instagram followers",
       icon: "instagram",
       link: { text: "@realnathanf", url: "#" },
     },
@@ -48,6 +51,7 @@ export const getGlobalStats = () => [
   },
   {
     socialMedia: {
+      title: "Youtube subscribers",
       icon: "youtube",
       link: { text: "Nathan F.", url: "#" },
     },
@@ -148,3 +152,56 @@ export const getTodayStats = () => [
     ],
   },
 ];
+
+export const getStatHistory = () => {
+  return {
+    parameters: {
+      totalFollowers: 1987,
+      followersPast10Days: { number: 81, growth: true },
+      followersToday: { number: 12, growth: true },
+    },
+    dataDate: "May 4 - May 13",
+    data: [
+      {
+        d: 4,
+        followers: 3,
+      },
+      {
+        d: 5,
+        followers: 2,
+      },
+      {
+        d: 6,
+        followers: 6,
+      },
+      {
+        d: 7,
+        followers: 8,
+      },
+      {
+        d: 8,
+        followers: 9,
+      },
+      {
+        d: 9,
+        followers: 10,
+      },
+      {
+        d: 10,
+        followers: 9,
+      },
+      {
+        d: 11,
+        followers: 10,
+      },
+      {
+        d: 12,
+        followers: 12,
+      },
+      {
+        d: 13,
+        followers: 12,
+      },
+    ],
+  };
+};

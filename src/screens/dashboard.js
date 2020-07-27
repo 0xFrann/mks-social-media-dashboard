@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import { totalFollowers, getGlobalStats, getTodayStats } from "../services";
 import CardStatsGlobal from "../components/CardStatsGlobal";
 import CardStatsToday from "../components/CardStatsToday";
+import ModalChart from "../components/ModalChart";
 
 function Dashboard() {
   const globalStats = getGlobalStats();
   const todayStats = getTodayStats();
+  const [modalData, setModalData] = useState("");
+  const [modalChartOpened, setModalChartState] = useState(false);
+
+  const openModal = (data) => {
+    setModalChartState(!modalChartOpened);
+    setModalData(data);
+  };
 
   return (
     <main className="container">
@@ -16,8 +24,11 @@ function Dashboard() {
         <div className="row">
           {globalStats.length &&
             globalStats.map((network, i) => (
-              <div className="col-sm-3" key={i}>
-                <CardStatsGlobal data={network} />
+              <div className="col-sm-3" key={i + "gs"}>
+                <CardStatsGlobal
+                  data={network}
+                  handleClick={() => openModal(network.socialMedia)}
+                />
               </div>
             ))}
         </div>
@@ -28,14 +39,23 @@ function Dashboard() {
         <div className="row">
           {todayStats.length &&
             todayStats.map((network, i) =>
-              network.parameters.map((param) => (
-                <div className="col-sm-3" key={i}>
-                  <CardStatsToday data={{ ...network.socialMedia, ...param }} />
+              network.parameters.map((param, x) => (
+                <div className="col-sm-3" key={i + x + "ts"}>
+                  <CardStatsToday
+                    data={{ ...network.socialMedia, ...param }}
+                    // handleClick={() => openModal(network.socialMedia)}
+                  />
                 </div>
               ))
             )}
         </div>
       </section>
+
+      <ModalChart
+        socialMedia={modalData}
+        open={modalChartOpened}
+        handleClose={() => setModalChartState(!modalChartOpened)}
+      />
     </main>
   );
 }

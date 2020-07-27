@@ -22,7 +22,7 @@ import IconDown from "../../assets/images/icon-down.svg";
 function CardStatsGlobal(props) {
   const { socialMedia, totalStats, growthStats } = props.data;
   return (
-    <CardStyled>
+    <CardStyled onClick={props.handleClick}>
       <CardHeaderStyled topLine={socialMedia.icon}>
         <img
           className="social-icon"
@@ -44,7 +44,11 @@ function CardStatsGlobal(props) {
         <small className="stat-caption">{totalStats.caption}</small>
       </CardBodyStyled>
       <CardFooterStyled className={growthStats.growth ? "increase" : "decrease"}>
-        <img className="growth-indicator" src={growthStats.growth ? IconUp : IconDown} />
+        <img
+          className="growth-indicator"
+          src={growthStats.growth ? IconUp : IconDown}
+          alt={growthStats.growth ? "Arrow up" : "Arrow down"}
+        />
         <span className="growth-caption">{growthStats.caption}</span>
       </CardFooterStyled>
     </CardStyled>

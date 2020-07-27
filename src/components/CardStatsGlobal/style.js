@@ -81,14 +81,13 @@ export const CardFooterStyled = styled.span`
   justify-content: center;
   align-items: center;
   .growth {
-    &-indicator,
     &-caption {
       color: var(--color-text);
       font-size: 0.75rem;
       font-weight: 700;
     }
     &-indicator {
-      font-size: 0.5rem;
+      width: 0.5rem;
       margin-right: 0.25rem;
     }
   }

@@ -31,3 +31,8 @@ $colors-dark: (
 
 $theme-light: map.merge($colors-base, $colors-light);
 $theme-dark: map.merge($colors-base, $colors-dark);
+
+// export vars for webpack
+:export {
+  desaturatedPurple: hsl(243, 51%, 70%);
+}
