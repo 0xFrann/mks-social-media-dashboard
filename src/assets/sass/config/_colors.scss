@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "sass:color";
 
 //  Colors Maps
 
@@ -12,6 +13,7 @@ $colors-light: (
   "background": hsl(0, 0%, 100%),
   "background-variation": hsl(225, 100%, 98%),
   "element": hsl(227, 47%, 96%),
+  "element-hover": color.scale(hsl(227, 47%, 96%), $lightness: -10%),
   "text": hsl(230, 17%, 14%),
   "text-variation": hsl(228, 12%, 44%),
 );
@@ -20,6 +22,7 @@ $colors-dark: (
   "background": hsl(230, 17%, 14%),
   "background-variation": hsl(232, 19%, 15%),
   "element": hsl(228, 28%, 20%),
+  "element-hover": color.scale(hsl(228, 28%, 20%), $lightness: 10%),
   "text": hsl(0, 0%, 100%),
   "text-variation": hsl(228, 34%, 66%),
 );

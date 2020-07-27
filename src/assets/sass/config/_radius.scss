@@ -1,0 +1,8 @@
+//  Radius Varaibles
+
+$border-radius-base: 5px !default;
+
+$border-radius: (
+  "default": $border-radius-base,
+  "large": $border-radius-base * 3,
+);

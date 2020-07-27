@@ -494,6 +494,9 @@ template {
   @each $name, $color in $theme-light {
     --color-#{$name}: #{$color};
   }
+  @each $name, $radius in $border-radius {
+    --border-radius-#{$name}: #{$radius};
+  }
 }
 
 // Dark Theme Vars Colors
