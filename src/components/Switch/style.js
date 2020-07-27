@@ -17,8 +17,7 @@ export const SwitchStyled = styled.label`
         background: var(--color-background-variation);
         transform: translateX(24px);
       }
-      &:hover,
-      &:active {
+      &:hover {
         background: linear-gradient(45deg, hsl(230, 22%, 74%) 0%, hsl(230, 22%, 74%));
         &:before {
           background: var(--color-text);
@@ -41,8 +40,7 @@ export const SwitchStyled = styled.label`
     background: linear-gradient(45deg, hsl(230, 22%, 74%) 0%, hsl(230, 22%, 74%));
     transition: all 300ms ease;
 
-    &:hover,
-    &:active {
+    &:hover {
       background: linear-gradient(45deg, hsl(210, 78%, 56%) 0%, hsl(146, 68%, 55%) 100%);
       &:before {
         background: var(--color-text);

@@ -6,6 +6,7 @@ import {
   ModalChartWrapperStyled,
   ModalChartHeaderStyled,
   ModalChartBodyStyled,
+  ModalChartCloseIcon,
 } from "./style";
 import IconUp from "../../assets/images/icon-up.svg";
 import IconDown from "../../assets/images/icon-down.svg";
@@ -39,11 +40,11 @@ function ModalChart({ open, socialMedia, handleClose }) {
       <ModalChartStyled>
         {open ? (
           <>
+            <ModalChartCloseIcon onClick={closeModal}>✖</ModalChartCloseIcon>
             <ModalChartHeaderStyled>
-              <h2 className="modal-title">{socialMedia.title}</h2>
-              <span className="modal-close" onClick={closeModal}>
-                ✖
-              </span>
+              <div className="d-flex">
+                <h2 className="modal-title">{socialMedia.title}</h2>
+              </div>
               <div className="d-flex align-items-center mb-4">
                 <img
                   className="social-icon"
@@ -61,11 +62,11 @@ function ModalChart({ open, socialMedia, handleClose }) {
                 </a>
               </div>
               <div className="row">
-                <div className="col-sm-3 d-flex align-items-center">
+                <div className="col-md-4 col-xl-3 d-flex align-items-center">
                   <span className="stat-number">{statHistory.parameters.totalFollowers}</span>
                   <span className="stat-caption">Total followers</span>
                 </div>
-                <div className="col-sm-3 d-flex align-items-center">
+                <div className="col-md-4 col-xl-3 d-flex align-items-center">
                   <div className="d-flex align-items-center">
                     <img
                       className="stat-indicator"
@@ -85,7 +86,7 @@ function ModalChart({ open, socialMedia, handleClose }) {
                   </div>
                   <span className="stat-caption">New followers in the past 10 days</span>
                 </div>
-                <div className="col-sm-3 d-flex align-items-center">
+                <div className="col-md-4 col-xl-3 d-flex align-items-center">
                   <div className="d-flex align-items-center">
                     <img
                       className="stat-indicator"

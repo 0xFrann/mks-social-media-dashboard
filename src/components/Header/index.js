@@ -8,11 +8,11 @@ function Header({ title, subtitle }) {
 
   return (
     <HeaderStyled className="row align-items-center">
-      <div className="col-sm-10">
+      <div className="col-md-9">
         <h1 className="title">{title}</h1>
         <h6 className="subtitle">{subtitle}</h6>
       </div>
-      <div className="col-sm-2 d-flex justify-content-end">
+      <div className="col-md-3 d-flex justify-content-center justify-content-sm-end pt-sm-0 pt-md-4">
         <Switch value={theme} onChange={toggleTheme} label="Dark Mode"></Switch>
       </div>
     </HeaderStyled>

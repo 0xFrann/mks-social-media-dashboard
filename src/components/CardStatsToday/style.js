@@ -12,6 +12,12 @@ export const CardStyled = styled.div`
   &:active {
     background: var(--color-element-hover);
   }
+  @media screen and (min-width: 576px) and (max-width: 826px) {
+    padding: 1rem;
+  }
+  @media screen and (max-width: 576px) {
+    margin: 0 1rem;
+  }
 `;
 
 export const CardHeaderStyled = styled.div`
@@ -22,6 +28,7 @@ export const CardHeaderStyled = styled.div`
     color: var(--color-text-variation);
     font-weight: 700;
     font-size: 0.875rem;
+    line-height: 1.2;
   }
 `;
 
@@ -61,6 +68,12 @@ export const CardBodyStyled = styled.div`
       &-caption {
         color: var(--color-bright-red);
       }
+    }
+  }
+  @media screen and (min-width: 576px) and (max-width: 826px) {
+    margin-top: 1rem;
+    .stat-number {
+      font-size: 1rem;
     }
   }
 `;

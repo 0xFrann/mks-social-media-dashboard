@@ -28,6 +28,9 @@ export const CardStyled = styled.div`
   &:active {
     background: var(--color-element-hover);
   }
+  @media screen and (max-width: 576px) {
+    margin: 0 1rem;
+  }
 `;
 
 export const CardHeaderStyled = styled.div`
@@ -73,6 +76,15 @@ export const CardBodyStyled = styled.div`
     font-weight: 400;
     line-height: 2;
     letter-spacing: 6px;
+  }
+  @media screen and (min-width: 576px) and (max-width: 826px) {
+    .stat-number {
+      font-size: 2.5rem;
+    }
+    .stat-caption {
+      color: var(--color-text-variation);
+      font-size: 0.5rem;
+    }
   }
 `;
 

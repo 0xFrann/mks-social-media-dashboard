@@ -20,4 +20,14 @@ export const HeaderStyled = styled.div`
     background: var(--color-background-variation);
     border-radius: 0 0 var(--border-radius-large) var(--border-radius-large);
   }
+  @media screen and (max-width: 576px) {
+    text-align: center;
+    .title {
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+    &:before {
+      height: 18rem;
+    }
+  }
 `;

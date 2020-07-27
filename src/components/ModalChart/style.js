@@ -4,21 +4,25 @@ export const ModalChartStyled = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-end;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 1000px;
   width: 85vw;
-  min-height: 400px;
   border-radius: var(--border-radius-large);
   overflow: hidden;
   background: var(--color-background-variation);
+  @media screen and (max-width: 826px) {
+    max-height: 90vh;
+    overflow-y: scroll;
+  }
 `;
 
 export const ModalChartWrapperStyled = styled.div`
   display: ${(props) => (props.opened ? "block" : "none")};
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -35,18 +39,22 @@ export const ModalChartWrapperStyled = styled.div`
   }
 `;
 
+export const ModalChartCloseIcon = styled.span`
+  font-family: sans-serif;
+  cursor: pointer;
+  position: sticky;
+  z-index: 99;
+  width: fit-content;
+  top: 2rem;
+  right: 2rem;
+  line-height: 1;
+`;
+
 export const ModalChartHeaderStyled = styled.div`
   position: relative;
+  width: 100%;
   padding: 2rem 4rem;
   background: var(--color-background-variation);
-  .modal-close {
-    font-family: sans-serif;
-    cursor: pointer;
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    line-height: 1;
-  }
   .social-icon ~ .social-link {
     margin-left: 0.5rem;
   }
@@ -83,9 +91,18 @@ export const ModalChartHeaderStyled = styled.div`
       }
     }
   }
+  @media screen and (max-width: 826px) {
+    .stat-number {
+      font-size: 2rem;
+    }
+  }
+  @media screen and (max-width: 576px) {
+    padding: 2rem;
+  }
 `;
 
 export const ModalChartBodyStyled = styled.div`
+  max-width: 100%;
   padding: 2rem 4rem;
   background: var(--color-background);
   border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
@@ -137,6 +154,16 @@ export const ModalChartBodyStyled = styled.div`
       .recharts-tooltip-label {
         display: none !important;
       }
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    padding: 2rem 0.25rem;
+    .date-range-title {
+      padding: 0 2rem;
+    }
+    .recharts-wrapper {
+      overflow-x: scroll;
+      max-width: 100%;
     }
   }
 `;

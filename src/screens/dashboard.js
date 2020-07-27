@@ -24,7 +24,7 @@ function Dashboard() {
         <div className="row">
           {globalStats.length &&
             globalStats.map((network, i) => (
-              <div className="col-sm-3" key={i + "gs"}>
+              <div className="col-sm-6 col-md-3" key={i + "gs"}>
                 <CardStatsGlobal
                   data={network}
                   handleClick={() => openModal(network.socialMedia)}
@@ -40,7 +40,7 @@ function Dashboard() {
           {todayStats.length &&
             todayStats.map((network, i) =>
               network.parameters.map((param, x) => (
-                <div className="col-sm-3" key={i + x + "ts"}>
+                <div className="col-sm-6 col-md-3" key={i + x + "ts"}>
                   <CardStatsToday
                     data={{ ...network.socialMedia, ...param }}
                     // handleClick={() => openModal(network.socialMedia)}
