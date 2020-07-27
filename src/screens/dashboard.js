@@ -17,7 +17,7 @@ function Dashboard() {
   };
 
   return (
-    <main className="container">
+    <main className="container mb-5">
       <Header title="Social Media Dashboard" subtitle={`Total Followers: ${totalFollowers()}`} />
 
       <section>

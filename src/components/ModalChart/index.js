@@ -19,6 +19,14 @@ function ModalChart({ open, socialMedia, handleClose }) {
     setStatHistory(getStatHistory());
   }, []);
 
+  useEffect(() => {
+    if (open) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [open]);
+
   const closeModal = (e) => {
     e.preventDefault();
     if (e.target === e.currentTarget) {
@@ -36,7 +44,7 @@ function ModalChart({ open, socialMedia, handleClose }) {
               <span className="modal-close" onClick={closeModal}>
                 ✖
               </span>
-              <div className="d-flex align-items-center">
+              <div className="d-flex align-items-center mb-4">
                 <img
                   className="social-icon"
                   src={require(`../../assets/images/icon-${socialMedia.icon}.svg`)}
@@ -52,7 +60,7 @@ function ModalChart({ open, socialMedia, handleClose }) {
                   {socialMedia.link.text}
                 </a>
               </div>
-              <div className="mt-4 row">
+              <div className="row">
                 <div className="col-sm-3 d-flex align-items-center">
                   <span className="stat-number">{statHistory.parameters.totalFollowers}</span>
                   <span className="stat-caption">Total followers</span>

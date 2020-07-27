@@ -489,6 +489,10 @@ template {
 
 // Added by @francomd
 
+.overflow-hidden {
+  overflow: hidden; // added for modal opened
+}
+
 // Root Vars Colors
 :root {
   @each $name, $color in $theme-light {
